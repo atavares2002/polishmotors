@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
+/*@font-face {
+  font-family: "Chamber Black";
+  src: url("/fonts/ChambersSansPro-Black.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-custom: "Chamber Black", ui-sans-serif, system-ui, sans-serif;
+}*/
+.equipment-slider {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Custom pagination dots */
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgba(0, 0, 0, 0.8);
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* Style default Swiper buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-navigation-size: 2rem; /* Adjust the size of the icon */
+  --swiper-navigation-color: #1e293b; /* slate-800 */
+}

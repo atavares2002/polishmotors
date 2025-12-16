@@ -1,0 +1,112 @@
+---
+---
+<nav class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16 md:h-20">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-2">
+                        <div class="w-50 h-50 flex items-center justify-center">
+                            <a href="/"><img src="logo-polish-sem-fundo.avif" alt=""></a>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="#" class="text-white hover:text-gray-200 transition">Home</a>
+                        <a href="#" class="text-white hover:text-gray-200 transition">Sobre nós</a>
+                        <div class="relative group">
+                            <button class="text-white hover:text-gray-200 transition flex items-center gap-1">
+                                Produtos
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Right Side Actions -->
+                    <div class="flex items-center gap-3">
+                        <button class="w-10 h-10 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                        <button class="hidden sm:block px-5 py-2 text-white hover:text-gray-200 transition">Login</button>
+                        <button class="px-5 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition font-medium">Sign Up</button>
+                    </div>
+                </div>
+                </div>
+                <!-- Mobile Hamburger Button -->
+      <div class="md:hidden">
+        <button
+          id="mobile-menu-btn"
+          class="text-gray-700 hover:text-gray-900 focus:outline-none"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              id="menu-icon"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+            <path
+              id="close-icon"
+              class="hidden"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu - Hidden by default -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div class="flex flex-col space-y-4">
+        <a
+          href="#"
+          class="text-gray-700 hover:text-gray-900 font-medium transition-colors"
+          >início</a
+        >
+        <a
+          href="#"
+          class="text-gray-700 hover:text-gray-900 font-medium transition-colors"
+          >sobre</a
+        >
+        <a
+          href="#"
+          class="text-gray-700 hover:text-gray-900 font-medium transition-colors"
+          >máquinas</a
+        >
+        <button
+          class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-lg transition-colors w-full"
+        >
+          Fale Conosco
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+                
+<script>
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener("click", () => {
+      if (mobileMenu) mobileMenu.classList.toggle("hidden");
+      if (menuIcon) menuIcon.classList.toggle("hidden");
+      if (closeIcon) closeIcon.classList.toggle("hidden");
+    });
+  }
+</script>

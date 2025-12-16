@@ -1,0 +1,110 @@
+---
+import SwiperSlider from "../components/SwiperSlider.astro";
+// Type definition for equipment items
+interface EquipmentItem {
+  id: number;
+  name: string;
+  quantity: string;
+  image: string;
+  marca: string;
+  alt: string;
+}
+
+// Static data - replace images with your actual equipment images
+const equipmentData: EquipmentItem[] = [
+  {
+    id: 1,
+    name: "Cavalete Central Honda CB 500X 2020 em diante",
+    quantity: "1 unidade",
+    image: "/images/equipment-1.png",
+    marca:"Bráz Acessórios",
+    alt: "Cavalete Central Honda CB 500X",
+  },
+  {
+    id: 2,
+    name: "Bauletos Laterais Adventure 35/40L Preto",
+    quantity: "3 unidades",
+    image: "/images/equipment-2.png",
+    marca:"Bráz Acessórios",
+    alt: "Bauletos Laterais Adventure 35/40L Preto",
+  },
+  {
+    id: 3,
+    name: "Bauletos Laterais Adventure 35/40L Escovado",
+    quantity: "4 unidades",
+    image: "/images/equipment-3.png",
+    marca:"Bráz Acessórios",
+    alt: "Bauletos Laterais Adventure 35/40L Escovado",
+  },
+  {
+    id: 4,
+    name: "Bagageiro para Baú Monokey Triumph Tiger 900",
+    quantity: "2 unidades",
+    image: "/images/equipment-4.png",
+    marca:"Bráz Acessórios",
+    alt: "Bagageiro para Baú Monokey Triumph Tiger 900",
+  },
+  {
+    id: 5,
+    name: "Protetor do Grau Honda Sahara 300 Prata",
+    quantity: "4 unidades",
+    image: "/images/equipment-5.png",
+    marca:"Bráz Acessórios",
+    alt: "Protetor do Grau Honda Sahara 300 Prata",
+  },
+];
+---
+<section
+      class="relative w-full bg-linear-to-br from-indigo-700 to-sky-900 py-20 overflow-hidden"
+    >
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-12 md:mb-16 uppercase tracking-wide font-custom"
+        >
+          Nossos Produtos
+        </h2>
+        <!-- Swiper Container -->
+        <!--
+      The SwiperSlider component uses client:visible to load its JavaScript
+      only when it enters the viewport, optimizing initial page load.
+    -->
+        <SwiperSlider equipmentData={equipmentData} />
+
+        <div class="flex justify-center items-center gap-16 py-12">
+          <button
+            class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-white to-neutral-200 hover:from-orange-100 hover:to-orange-200 text-gray-900 font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+          >
+            Faça seu pedido
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+          <button
+            class="inline-flex items-center gap-3 px-8 py-4 border-2 hover:ring border-white text-white focus:outline-none focus:ring-2 focus:ring-sky-900 focus:ring-opacity-75 font-semibold rounded-full transition-all transform hover:scale-105 cursor-pointer"
+          >
+            PDF Materiais
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
