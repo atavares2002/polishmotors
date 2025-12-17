@@ -4,7 +4,7 @@ import SwiperSlider from "../components/SwiperSlider.astro";
 interface EquipmentItem {
   id: number;
   name: string;
-  quantity: string;
+  description: string;
   image: string;
   marca: string;
   alt: string;
@@ -14,16 +14,16 @@ interface EquipmentItem {
 const equipmentData: EquipmentItem[] = [
   {
     id: 1,
-    name: "Cavalete Central Honda CB 500X 2020 em diante",
-    quantity: "1 unidade",
+    name: "Bauleto Atacama 55L Preto",
+    description: "Top case Atacama produzido em chapa de alumínio naval escovado de 1,5mm, fixado com arrebites herméticos de inox e alumínio.",
     image: "/images/equipment-1.png",
     marca:"Bráz Acessórios",
-    alt: "Cavalete Central Honda CB 500X",
+    alt: "Bauleto Atacama 55L Preto",
   },
   {
     id: 2,
     name: "Bauletos Laterais Adventure 35/40L Preto",
-    quantity: "3 unidades",
+    description: "Projetados para motociclistas exigentes que buscam qualidade, resistência e praticidade. Fabricados com materiais de alta performance, oferecem robustez e confiabilidade para viagens longas ou deslocamentos urbanos.",
     image: "/images/equipment-2.png",
     marca:"Bráz Acessórios",
     alt: "Bauletos Laterais Adventure 35/40L Preto",
@@ -31,7 +31,7 @@ const equipmentData: EquipmentItem[] = [
   {
     id: 3,
     name: "Bauletos Laterais Adventure 35/40L Escovado",
-    quantity: "4 unidades",
+    description: "Projetados para motociclistas exigentes que buscam qualidade, resistência e praticidade. Fabricados com materiais de alta performance, oferecem robustez e confiabilidade para viagens longas ou deslocamentos urbanos.",
     image: "/images/equipment-3.png",
     marca:"Bráz Acessórios",
     alt: "Bauletos Laterais Adventure 35/40L Escovado",
@@ -39,7 +39,7 @@ const equipmentData: EquipmentItem[] = [
   {
     id: 4,
     name: "Bagageiro para Baú Monokey Triumph Tiger 900",
-    quantity: "2 unidades",
+    description: "O Bagageiro para Baú Monokey da Bráz Acessórios foi desenvolvido especialmente para a Triumph Tiger 900, aumentando a capacidade de carga sem comprometer o desempenho e a segurança da moto. ",
     image: "/images/equipment-4.png",
     marca:"Bráz Acessórios",
     alt: "Bagageiro para Baú Monokey Triumph Tiger 900",
@@ -47,21 +47,37 @@ const equipmentData: EquipmentItem[] = [
   {
     id: 5,
     name: "Protetor do Grau Honda Sahara 300 Prata",
-    quantity: "4 unidades",
+    description: "O Protetor do Grau Bráz Acessórios é projetado para oferecer proteção avançada à sua Honda Sahara 300, especialmente em terrenos acidentados e trilhas desafiadoras.",
     image: "/images/equipment-5.png",
     marca:"Bráz Acessórios",
     alt: "Protetor do Grau Honda Sahara 300 Prata",
   },
+  {
+    id: 6,
+    name: "Caixa de Ferramentas Universal Preta",
+    description: "A Tool Box é um acessório importante para sua moto, um porta objeto com a intenção de maximizar e organizar seus pertences.",
+    image: "/images/equipment-6.png",
+    marca:"Bráz Acessórios",
+    alt: "Caixa de Ferramentas Universal Preta",
+  },
+  {
+    id: 7,
+    name: "Bauleto Traseiro Rally 54L Escovado",
+    description: "Fabricado em chapa de alumínio naval escovado de 2,0mm, este baú é fixado com arrebites herméticos de inox e alumínio, garantindo máxima resistência e confiabilidade.",
+    image: "/images/equipment-7.png",
+    marca:"Bráz Acessórios",
+    alt: "Bauleto Traseiro Rally 54L Escovado Bráz Acessórios",
+  },
 ];
 ---
-<section
+<section id="produtos"
       class="relative w-full bg-linear-to-br from-indigo-700 to-sky-900 py-20 overflow-hidden"
     >
       <div class="container mx-auto px-4">
         <h2
-          class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-12 md:mb-16 uppercase tracking-wide font-custom"
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-white mb-12 md:mb-16  tracking-wide font-custom"
         >
-          Nossos Produtos
+        Produtos Bráz em destaque
         </h2>
         <!-- Swiper Container -->
         <!--
@@ -71,8 +87,8 @@ const equipmentData: EquipmentItem[] = [
         <SwiperSlider equipmentData={equipmentData} />
 
         <div class="flex justify-center items-center gap-16 py-12">
-          <button
-            class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-white to-neutral-200 hover:from-orange-100 hover:to-orange-200 text-gray-900 font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+          <a href="https://wa.me/5561985300971" target="_blank"><button
+            class="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-white to-neutral-200 hover:from-orange-100 hover:to-orange-300 text-gray-900 font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
           >
             Faça seu pedido
             <svg
@@ -87,11 +103,11 @@ const equipmentData: EquipmentItem[] = [
                 stroke-width="2.5"
                 d="M9 5l7 7-7 7"></path>
             </svg>
-          </button>
+          </button></a>
           <button
             class="inline-flex items-center gap-3 px-8 py-4 border-2 hover:ring border-white text-white focus:outline-none focus:ring-2 focus:ring-sky-900 focus:ring-opacity-75 font-semibold rounded-full transition-all transform hover:scale-105 cursor-pointer"
           >
-            PDF Materiais
+            Catálogo
             <svg
               class="w-5 h-5"
               fill="none"
