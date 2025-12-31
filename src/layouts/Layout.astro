@@ -3,6 +3,17 @@ import '../styles/global.css';
 
 import Header from  '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string; // Optional prop for overriding the canonical URL
+}
+
+const { title, description, canonical } = Astro.props;
+const finalCanonicalUrl = canonical || canonicalURL.href;
+
+
 ---
 <!doctype html>
 <html lang="en">
@@ -15,6 +26,7 @@ import Footer from '../components/Footer.astro';
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 		<meta name="apple-mobile-web-app-title" content="MyWebSite" />
 		<link rel="manifest" href="/site.webmanifest" />
+		
 		<meta name="generator" content={Astro.generator} />
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -23,7 +35,10 @@ import Footer from '../components/Footer.astro';
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-M3KKZ9MJ');</script>
 		<!-- End Google Tag Manager -->
-		<title>Assessórios PolishMotors</title>
+		 <!-- Event snippet for Whatsapp conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+
+		<title>{title}</title>
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
